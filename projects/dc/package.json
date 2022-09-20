@@ -1,0 +1,20 @@
+{
+  "name": "@dynamic-things/ng-dc",
+  "description": "Angular dynamic component",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Dynamic Things"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dynamic-things/ng-dc"
+  },
+  "peerDependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
