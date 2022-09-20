@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DCSharedService } from 'projects/dc/src/lib/services/shared/shared.service';
-import { DCTemplateDoneEvent, DCTemplateRef } from 'projects/dc/src/public-api';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DCViewRef } from 'projects/dc/src/public-api';
+import { FormGeneratorService } from './components/form-generator/form-generator.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,20 @@ import { DCTemplateDoneEvent, DCTemplateRef } from 'projects/dc/src/public-api';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public Ref!: DCTemplateRef;
+  @ViewChild(DCViewRef, { static: true })
+  private view!: DCViewRef;
 
-  constructor(private shared: DCSharedService) {}
+  constructor(public FormGenerator: FormGeneratorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.FormGenerator.LayoutChange.subscribe(() => {
+      this.view.Render();
+    });
+  }
 
-  public Done(event: DCTemplateDoneEvent) {}
+  public Save() {
+    this.FormGenerator.FormGroup.markAllAsTouched();
+    console.log(this.FormGenerator.FormGroup.valid);
+    console.log(this.FormGenerator.FormGroup.value);
+  }
 }

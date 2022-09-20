@@ -1,32 +1,7 @@
-<!-- <dc-template
-  name="content"
-  [data]="{ html: '<h1>Hello World</h1>' }"
-  [attributes]="{ class: 'block' }"
-  content="Hey dc-template dom tag"
-  [(ref)]="Ref"
-  (done)="Done($event)"
-></dc-template>
-
-<dc-dom
-  tag="h4"
-  [attributes]="{ class: 'text-3xl' }"
-  content="Hey H4 dom tag"
-></dc-dom> -->
-
-<dc-template
-  name="dc-dom"
-  [data]="{
-    tag: 'h3',
-    content: 'bye'
-  }"
-  [content]="[
-    {
-      type: 'component',
-      tag: 'dc-dom',
-      data: {
-        tag: 'p'
-      },
-      content: 'hiiiii'
-    }
-  ]"
-></dc-template>
+<app-form-generator></app-form-generator>
+<br />
+<form [formGroup]="FormGenerator.FormGroup">
+  <dc-view [layout]="FormGenerator.Layout"></dc-view>
+  <br /><br />
+  <button (click)="Save()">Save</button>
+</form>
