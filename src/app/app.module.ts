@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { DynamicComponentModule } from 'projects/dc/src/public-api';
+import { DynamicComponentModule } from 'dist/dc';
 
 import { AppComponent } from './app.component';
 import { ContentComponent } from './components/content/content.component';
@@ -9,7 +9,12 @@ import { FormGeneratorComponent } from './components/form-generator/form-generat
 import { DcInputComponent } from './components/dc-input/dc-input.component';
 
 @NgModule({
-  declarations: [AppComponent, ContentComponent, FormGeneratorComponent, DcInputComponent],
+  declarations: [
+    AppComponent,
+    ContentComponent,
+    FormGeneratorComponent,
+    DcInputComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -22,8 +27,8 @@ import { DcInputComponent } from './components/dc-input/dc-input.component';
         },
         {
           name: 'dc-input',
-          component: DcInputComponent
-        }
+          component: DcInputComponent,
+        },
       ],
     }),
   ],

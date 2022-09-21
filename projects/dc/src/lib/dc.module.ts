@@ -1,10 +1,16 @@
 import { ModuleWithProviders, NgModule, Type } from '@angular/core';
-import { DCDomComponent } from './components/dom/dom.component';
+import { CommonModule } from '@angular/common';
 import { DCTemplateComponent } from './components/template/template.component';
+import { DCViewComponent } from './components/view/view.component';
+import { DCDomComponent } from './components/dom/dom.component';
 import { FactoryService } from './services/factory/factory.service';
 import { StaticDynamicComponentModule } from './static-dc.module';
 
-@NgModule({})
+@NgModule({
+  declarations: [DCTemplateComponent, DCViewComponent, DCDomComponent],
+  imports: [CommonModule],
+  exports: [DCTemplateComponent, DCViewComponent, DCDomComponent],
+})
 export class DynamicComponentModule {
   static forRoot(
     params: ForRootParams
