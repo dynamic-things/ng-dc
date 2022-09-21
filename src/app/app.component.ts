@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DCViewRef } from 'projects/dc/src/public-api';
+import { DCViewRef } from 'dist/dc';
 import { FormGeneratorService } from './components/form-generator/form-generator.service';
 
 @Component({
