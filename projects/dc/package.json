@@ -1,7 +1,7 @@
 {
   "name": "@dynamic-things/ng-dc",
   "description": "Angular dynamic component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": {
     "name": "Dynamic Things"
